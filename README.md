@@ -112,7 +112,7 @@ We provided a preprocessing scipt to convert the original data into a json file,
 python preprocess.py
 ```
 
-By default, this will extract 1000 vectors.
+By default, this will extract 1000 vectors, and stored as ./data/data1000.json
 
 
 
@@ -122,4 +122,26 @@ By default, this will extract 1000 vectors.
 
 
 ## Part 3
-TBD
+
+To compile the program:
+:
+```bash
+g++ -std=c++11 -I ~/course/hw1/alglib-cpp/src knn_alglib.cpp ~/course/hw1/alglib-cpp/src/*.cpp -o knn_alglib
+```
+
+To run the program:
+
+```bash
+./knn_alglib <input_data> <K> <eps>
+```
+
+- `<input_data>`: Path to the input JSON data file
+
+- `<K>`: Number of nearest neighbors to find
+
+- `<eps>`: Eps for approximate KNN search
+
+Example:
+```bash
+./knn_alglib ./data/sample_data.json 3 0
+```
